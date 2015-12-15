@@ -15,13 +15,13 @@ class Reindeer(object):
         else:
             occurences = total_seconds / (self.rest + self.duration)
             time_left = total_seconds - ((self.rest + self.duration) * occurences)
-            # print "time left", time_left
             if time_left >= self.duration:
                 occurences += 1
             distance = (occurences * self.speed * self.duration)
             if self._current_seconds > (occurences * (self.rest + self.duration)):
                 distance += (time_left * self.speed)
             return distance
+
 
 class Reindeers(list):
     @classmethod
